@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="form.css">
+
+<div class="main">
+  <div class="form-card" style="max-width: 500px; width: 100%;">
+
+    <div class="title" style="justify-content: center;">
+      <span class="title-main">justif</span>
+      <span class="title-highlight">icacion</span>
+    </div>
+    <form action="" id="form-justificacion">
+      <label for="select-horario">Horario</label>
+      <select class="input-field" name="horario" id="select-horario" required></select>
+      <label for="select-tipo-justificacion">Tipo de justificación</label>
+      <select class="input-field" name="tipo-justificacion" id="select-tipo-justificacion" required></select>
+      <div id="motivo-justificacion"></div>
+      <input type="file" name="justificacion" id="justificacion" required>
+      <input type="submit" value="Enviar" class="btn">
+    </form>
+  </div>
+</div>
+
+<script type="module" src="pages/site/a/justificacion.js"></script>

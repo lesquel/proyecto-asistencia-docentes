@@ -1,0 +1,144 @@
+.done-task {
+  width: 465px;
+  height: 75px;
+  overflow: hidden;
+}
+
+.done-task .overlap {
+  width: 467px;
+  height: 77px;
+  background-color: #f8d57e;
+  border-radius: 20px;
+  position: relative;
+  top: -1px;
+  left: -1px;
+}
+
+.done-task .text-wrapper {
+  position: absolute;
+  top: 28px;
+  left: 83px;
+  font-family: "Gilroy-Bold-☞", Helvetica;
+  font-weight: 400;
+  color: #2b2442;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+.done-task .div {
+  position: absolute;
+  top: 29px;
+  left: 383px;
+  font-family: "Gilroy-Medium-☞", Helvetica;
+  font-weight: 400;
+  color: #2b2442;
+  font-size: 14px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: 14px;
+  white-space: nowrap;
+}
+
+.done-task .icon {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 21px;
+  left: 31px;
+  overflow: hidden;
+}
+
+.done-task .overlap-group {
+  width: 37px;
+  height: 37px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  position: relative;
+  top: -1px;
+  left: -1px;
+}
+
+.done-task .text-wrapper-2 {
+  position: absolute;
+  top: 11px;
+  left: 8px;
+  font-family: "Roboto-Regular", Helvetica;
+  font-weight: 400;
+  color: #f8d57e;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 15px;
+  white-space: nowrap;
+}
+/* Original CSS code should be injected here */
+
+.task-card {
+  width: 465px;
+  height: 75px;
+  overflow: hidden;
+  background-color: #f8d57e;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 31px;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.task-icon {
+  width: 35px;
+  height: 35px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 17px;
+}
+
+.task-emoji {
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 16px;
+  color: #f8d57e;
+}
+
+.task-title {
+  font-family: "Gilroy-Bold-☞", Helvetica;
+  font-weight: 400;
+  color: #2b2442;
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.task-time {
+  font-family: "Gilroy-Medium-☞", Helvetica;
+  font-weight: 400;
+  color: #2b2442;
+  font-size: 14px;
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  .task-card {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .task-icon {
+    margin-right: 10px;
+  }
+
+  .task-title {
+    font-size: 14px;
+  }
+
+  .task-time {
+    font-size: 12px;
+  }
+}

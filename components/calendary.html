@@ -1,0 +1,144 @@
+<style>
+  .calendar {
+    width: 357px;
+    height: 228px;
+    background: white;
+    font-family: 'Gilroy', sans-serif;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .calendar {
+      position: absolute;
+      transform: scale(0);
+    }
+  }
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+    height: 53px;
+  }
+
+  .calendar-month {
+    font-size: 24px;
+    color: #2C2543;
+    line-height: 24px;
+  }
+
+  .calendar-range {
+    font-size: 14px;
+    color: #F4B860;
+    font-weight: bold;
+  }
+
+  .calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px 20px;
+  }
+
+  .calendar-weekday {
+    font-size: 12px;
+    text-align: center;
+    color: #F4B860;
+    font-weight: bold;
+  }
+
+  .calendar-day {
+    font-size: 14px;
+    text-align: center;
+    color: #2C2543;
+    line-height: 24px;
+    position: relative;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .calendar-day.faded {
+    color: #667180;
+    opacity: 0.4;
+  }
+
+  .calendar-day.active {
+    background: #F8D57E;
+    border-radius: 50%;
+    width: 39px;
+    height: 39px;
+    margin: auto;
+  }
+
+  .calendar-day.has-dot {
+    position: relative;
+  }
+
+  .calendar-day .dot {
+    width: 4px;
+    height: 4px;
+    background: #F8D57E;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .calendar-day .dot.lower {
+    bottom: 4px;
+  }
+
+  .calendar-day .dot.upper {
+    top: 4px;
+  }
+</style>
+
+<div class="calendar">
+  <div class="calendar-header">
+    <span class="calendar-month">March, 2025</span>
+    <span class="calendar-range">Two weeks</span>
+  </div>
+
+  <div class="calendar-body">
+    <div class="calendar-weekday">Mon</div>
+    <div class="calendar-weekday">Tue</div>
+    <div class="calendar-weekday">Wed</div>
+    <div class="calendar-weekday">Thu</div>
+    <div class="calendar-weekday">Fri</div>
+    <div class="calendar-weekday">Sat</div>
+    <div class="calendar-weekday">Sun</div>
+
+    <!-- Semana 1 -->
+    <div class="calendar-day faded">1</div>
+    <div class="calendar-day has-dot">2<div class="dot"></div>
+      <div class="dot upper"></div>
+    </div>
+    <div class="calendar-day has-dot faded">3<div class="dot upper"></div>
+    </div>
+    <div class="calendar-day has-dot">4<div class="dot upper"></div>
+    </div>
+    <div class="calendar-day faded">5<div class="dot lower"></div>
+    </div>
+    <div class="calendar-day faded">6</div>
+    <div class="calendar-day faded">7</div>
+
+    <!-- Semana 2 -->
+    <div class="calendar-day active has-dot">8<div class="dot lower"></div>
+    </div>
+    <div class="calendar-day has-dot">9<div class="dot lower"></div>
+    </div>
+    <div class="calendar-day faded">10<div class="dot upper"></div>
+    </div>
+    <div class="calendar-day">11<div class="dot upper"></div>
+    </div>
+    <div class="calendar-day">12<div class="dot lower"></div>
+    </div>
+    <div class="calendar-day faded">13</div>
+    <div class="calendar-day faded">14</div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+:root {
+  --color-primary: #3d8b40aa;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.p-4 {
+  padding: 1em;
+}
+
+.p-8 {
+  padding: 2em;
+}
+
+.flex-container-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+
+.title-main,
+.title-highlight {
+  font-size: 40px;
+  font-family: "Gilroy-Medium", sans-serif;
+  font-weight: 400;
+  line-height: 50px;
+  word-wrap: break-word;
+}
+
+.title-main {
+  color: black;
+}
+
+.title-highlight {
+  color: #f4b860;
+}

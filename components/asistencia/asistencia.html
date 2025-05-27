@@ -1,0 +1,23 @@
+<!-- From Uiverse.io by anniekoop -->
+<link rel="stylesheet" href="components/asistencia/asistencia.css">
+
+
+<template class="workout-template">
+    <div class="workout-card">
+        <div class="workout-bg"></div>
+        <div class="workout-icon-wrapper">
+            <div class="workout-icon-bg"></div>
+            <div class="workout-icon-emoji">💙</div>
+        </div>
+        <div class="workout-title"></div>
+        <div class="workout-time"></div>
+        <div class="workout-list"></div>
+    </div>
+</template>
+
+<div id="asistencia_conte" class="flex-container-grid" style="margin: 1em 0;"></div>
+
+<script type="module">
+    import { generateAsitencia } from "./components/asistencia/useAsistencia.utils.js";
+    generateAsitencia()
+</script>

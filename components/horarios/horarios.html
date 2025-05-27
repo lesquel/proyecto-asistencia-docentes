@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="components/horarios/horarios.css">
+<template id="horarios-template">
+  <article class="task-card">
+    <div class="task-content">
+      <div class="task-icon">
+        <span class="task-emoji" aria-hidden="true">📅</span>
+      </div>
+      <h2 class="task-title"></h2>
+      <time class="task-time" ></time>
+    </div>
+  </article>
+</template>
+
+<div id="horarios_conte" class="flex-container-grid" style="margin: 1em 0;"></div>
+
+<script type="module">
+    import { generateHorarios } from "./components/horarios/useHorarios.utils.js";
+    generateHorarios()
+</script>

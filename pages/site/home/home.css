@@ -1,0 +1,36 @@
+.flex-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; <- quítalo si no quieres que los elementos se apilen */
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 400px; /* Cambia a un valor fijo o relativo */
+  height: 100dvh;
+  background: #f6f7fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+}
+
+.main-content {
+  flex: 1; /* Ocupa todo el espacio restante */
+  margin: 2em;
+}
+
+@media screen and (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    justify-content: space-around;
+    height: auto;
+  }
+  .flex-container {
+    flex-direction: column;
+  }
+}

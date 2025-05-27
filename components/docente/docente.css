@@ -1,0 +1,48 @@
+.docente-container {
+  position: relative;
+  width: 100%;
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 1.25rem; 
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.docente-name {
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-size: 1.125rem; 
+  font-weight: 700;
+  color: #000;
+  line-height: 1.25;
+  word-wrap: break-word;
+}
+
+.docente-more {
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-size: 0.875rem; 
+  font-weight: 400;
+  color: #f4b860;
+  line-height: 1.25;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.docente-more:hover {
+  color: #e39d3c;
+}
+
+.docente-img {
+  width: 3.5625rem; 
+  height: 3.75rem;   
+  object-fit: cover;
+  border-radius: 50%;
+  align-self: flex-end;
+}

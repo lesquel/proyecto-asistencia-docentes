@@ -1,0 +1,144 @@
+.workout-card {
+  width: 100%;
+  max-width: 465px;
+  height: auto;
+  min-height: 150px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Gilroy-Regular', sans-serif;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.workout-bg {
+  position: absolute;
+  inset: 0;
+  background: #F6F7FB;
+  opacity: 0.5;
+  border-radius: 1.25rem;
+  z-index: 0;
+}
+
+.workout-title {
+  position: relative;
+  font-size: 1rem;
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-weight: 400;
+  color: #2C2543;
+  line-height: 1rem;
+  margin-left: 60px;
+  z-index: 1;
+}
+
+.workout-time {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.5rem;
+  font-size: 0.875rem;
+  font-family: 'Gilroy-Medium', sans-serif;
+  font-weight: 400;
+  color: #2C2543;
+  line-height: 0.875rem;
+  text-align: right;
+  z-index: 1;
+}
+
+.workout-icon-wrapper {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.workout-icon-bg {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 0.625rem;
+  position: absolute;
+}
+
+.workout-icon-emoji {
+  position: absolute;
+  left: 7px;
+  top: 10px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1rem;
+  color: #F8D57E;
+}
+
+.workout-list {
+  margin-top: 3.5rem;
+  margin-left: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1;
+  position: relative;
+}
+
+.workout-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.workout-dot {
+  width: 4px;
+  height: 4px;
+  background: #2C2543;
+  border-radius: 9999px;
+}
+
+.workout-text {
+  font-size: 0.875rem;
+  color: #2C2543;
+  line-height: 0.875rem;
+}
+
+
+/* 🔁 Responsive Design */
+@media (max-width: 480px) {
+  .workout-card {
+    padding: 1rem;
+  }
+
+  .workout-title {
+    font-size: 0.9rem;
+    margin-left: 3.5rem;
+  }
+
+  .workout-time {
+    font-size: 0.75rem;
+    top: 1.2rem;
+    right: 1rem;
+    bottom: 20px;
+    top: auto;
+  }
+
+  .workout-icon-wrapper {
+    top: 1rem;
+    left: 1rem;
+    width: 30px;
+    height: 30px;
+  }
+
+  .workout-icon-emoji {
+    top: 8px;
+    left: 6px;
+    font-size: 0.9rem;
+  }
+
+  .workout-list {
+    margin-left: 3rem;
+    margin-top: 3rem;
+  }
+
+  .workout-text {
+    font-size: 0.75rem;
+  }
+}
