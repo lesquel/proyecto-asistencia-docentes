@@ -4,8 +4,6 @@ import { Data } from './data.data.js';
 
 const useComponentsInstance = new useComponents();
 
-console.log(location.hash.slice(1) || "/");
-
 const routes = new useRoutes([...siteRoutes, ...authRoutes]);
 
 document.addEventListener("DOMContentLoaded", () => {

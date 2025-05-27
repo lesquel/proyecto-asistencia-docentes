@@ -51,6 +51,6 @@ $("#form-login").addEventListener("submit", (e) => {
   });
 
   if (login) {
-    routes.redirect(siteRoutes[0].path);
+    location.reload();
   }
 });
