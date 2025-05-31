@@ -14,6 +14,8 @@ import {
   generateHorarios,
   removeHorarios,
 } from "../horarios/useHorarios.utils.js";
+
+
 const data = new Data();
 
 $("#add-btn-txt").addEventListener("click", () => {

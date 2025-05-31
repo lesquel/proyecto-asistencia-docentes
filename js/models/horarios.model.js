@@ -3,6 +3,5 @@ export default class Horarios {
     this.fecha = fecha;
     this.salida = salida;
     this.entrada = entrada;
-  }
-
+  } 
 }
