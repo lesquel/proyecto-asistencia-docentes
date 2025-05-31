@@ -57,10 +57,6 @@ const loginIcon = new useManageComponent({
   },
 });
 
-
-
 login.addInner(loginIcon.component);
-
 nav.addInner([...list, login.component]);
-
 nav.insertIn("#button-container");

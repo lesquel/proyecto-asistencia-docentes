@@ -7,14 +7,10 @@ export class Data {
     if (Data.instance) {
       return Data.instance;
     }
-
     Data.instance = this;
-
     this.user = null;
     this.data = {};
-
     this.loadData();
-
     return this;
   }
 

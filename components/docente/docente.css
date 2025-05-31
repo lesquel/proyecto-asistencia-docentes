@@ -1,48 +1,170 @@
 .docente-container {
   position: relative;
-  width: 100%;
-  margin: 1em 0;
-  padding: 1em;
-  border-radius: 1.25rem; 
-  background-color: #fff;
+  margin: 2em 0;
+  padding: 1.8em;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fbfd 100%);
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.03);
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
   width: 100%;
   height: auto;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 1;
+}
+
+.docente-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.docente-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4361ee, #3a0ca3);
+  z-index: 0;
+}
+
+.docente-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 2;
 }
 
 .docente-name {
-  font-family: 'Gilroy-Bold', sans-serif;
-  font-size: 1.125rem; 
+  font-family: "Segoe UI", sans-serif;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #000;
-  line-height: 1.25;
-  word-wrap: break-word;
+  color: #2c3e50;
+  line-height: 1.3;
+  transition: all 0.3s ease;
+}
+
+.docente-container:hover .docente-name {
+  color: #4361ee;
+}
+
+.docente-details {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 10px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #5a6b7c;
+}
+
+.detail-item i {
+  color: #4361ee;
+  font-size: 1.1rem;
 }
 
 .docente-more {
-  font-family: 'Gilroy-Bold', sans-serif;
-  font-size: 0.875rem; 
-  font-weight: 400;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: #f4b860;
   line-height: 1.25;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(244, 184, 96, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  margin-top: 15px;
+  align-self: flex-start;
 }
 
 .docente-more:hover {
   color: #e39d3c;
+  background: rgba(244, 184, 96, 0.15);
+  transform: translateX(5px);
+}
+
+.docente-more i {
+  transition: transform 0.3s ease;
+}
+
+.docente-more:hover i {
+  transform: translateX(3px);
+}
+
+.docente-img-container {
+  position: relative;
+  z-index: 2;
 }
 
 .docente-img {
-  width: 3.5625rem; 
-  height: 3.75rem;   
+  width: 5rem;
+  height: 5rem;
   object-fit: cover;
   border-radius: 50%;
-  align-self: flex-end;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.docente-container:hover .docente-img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(67, 97, 238, 0.25);
+}
+
+.docente-status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #4ade80;
+  border: 2px solid #fff;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .docente-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5em;
+  }
+
+  .docente-info {
+    align-items: center;
+  }
+
+  .docente-details {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .docente-more {
+    align-self: center;
+  }
+
+  .docente-container::before {
+    width: 100%;
+    height: 5px;
+  }
 }

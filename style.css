@@ -1,12 +1,26 @@
 :root {
-  --color-primary: #3d8b40aa;
+  --color-primary: #424242; /* verde */
+  --color-secondary: #746363; /* amarillo */
+  --color-accent: #2a5c9a;
+  --color-light: #f8f9fa;
+  --color-dark: #212529;
+  --color-gray: #6c757d;
 }
 * {
   margin: 0;
-  box-sizing: border-box;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  background: var(--color-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -14,8 +28,6 @@
   justify-content: center;
   align-items: center;
 }
-
-
 
 .p-4 {
   padding: 1em;

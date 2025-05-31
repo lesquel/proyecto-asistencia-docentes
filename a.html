@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente Mejorado</title>
+    <style>
+        :root {
+            --color-primary: #424242;
+            --color-secondary: #746363;
+            --color-accent: #2a5c9a;
+            --color-light: #f8f9fa;
+            --color-dark: #212529;
+            --color-gray: #6c757d;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, var(--color-light) 0%, #e0e0e0 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 2rem;
+        }
+
+        .add_container-div {
+            background-color: var(--color-light);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            padding: 2.5em 1.5em;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .add_container-div:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .header-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1em;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header-div h2 {
+            color: var(--color-primary);
+            margin: 0 0 0.5rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .header-div p {
+            color: var(--color-gray);
+            margin: 0;
+            font-size: 1rem;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        .icon-btn {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: #fff;
+            border-radius: 50%;
+            font-family: inherit;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(42, 92, 154, 0.3);
+        }
+
+        .add-btn:hover {
+            width: 150px;
+            border-radius: 30px;
+            background-color: var(--color-light);
+        }
+
+        .btn-txt {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            color: var(--color-dark);
+            font-weight: 500;
+            font-size: 1rem;
+            white-space: nowrap;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 15px;
+        }
+
+        .add-btn:hover .btn-txt {
+            opacity: 1;
+        }
+
+        .add-btn::before,
+        .add-btn::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 12px;
+            height: 4px;
+            background: var(--color-accent);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translateY(-50%);
+        }
+
+        .add-btn::before {
+            left: 16px;
+            border-radius: 2px 0 0 2px;
+        }
+
+        .add-btn::after {
+            right: 16px;
+            border-radius: 0 2px 2px 0;
+        }
+
+        .add-btn:hover::before,
+        .add-btn:hover::after {
+            width: 4px;
+            height: 4px;
+        }
+
+        .add-icon::before,
+        .add-icon::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 2px;
+            height: 24px;
+            background: var(--color-accent);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: translate(-50%, -50%);
+        }
+
+        .add-icon::before {
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        .add-icon::after {
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .add-btn:hover .add-icon::before,
+        .add-btn:hover .add-icon::after {
+            height: 4px;
+            width: 16px;
+        }
+
+        .add-btn:hover .add-icon::before {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        .add-btn:hover .add-icon::after {
+            transform: translate(-50%, -50%);
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            color: var(--color-primary);
+            margin: 0 0 0.75rem;
+        }
+
+        .feature p {
+            color: var(--color-gray);
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="add_container-div">
+            <div class="header-div">
+                <h2>Agregar Nuevo Elemento</h2>
+                <p>Utilice el botón interactivo para agregar nuevos elementos al sistema</p>
+            </div>
+            
+            <button class="icon-btn add-btn">
+                <div class="add-icon"></div>
+                <span class="btn-txt">Agregar Nuevo</span>
+            </button>
+            
+            <div class="features">
+                <div class="feature">
+                    <i>📁</i>
+                    <h3>Organización</h3>
+                    <p>Mantenga todos sus elementos organizados y accesibles en un solo lugar</p>
+                </div>
+                <div class="feature">
+                    <i>⚡</i>
+                    <h3>Rápido</h3>
+                    <p>Agregue nuevos elementos en segundos con nuestro sistema optimizado</p>
+                </div>
+                <div class="feature">
+                    <i>🔒</i>
+                    <h3>Seguro</h3>
+                    <p>Todos sus datos están protegidos con encriptación de última generación</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

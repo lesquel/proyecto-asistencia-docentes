@@ -1,6 +1,5 @@
 import { useComponents, useRoutes } from './utils/index.js';
 import { authRoutes, siteRoutes } from './routes/index.js';
-import { Data } from './data.data.js';
 
 const useComponentsInstance = new useComponents();
 
