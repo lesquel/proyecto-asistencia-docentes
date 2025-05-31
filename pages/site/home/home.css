@@ -2,8 +2,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* flex-wrap: wrap; <- quítalo si no quieres que los elementos se apilen */
 }
+
 
 .sidebar {
   position: sticky;
