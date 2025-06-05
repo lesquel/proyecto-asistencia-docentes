@@ -1,0 +1,92 @@
+
+#dialog_asistencia {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  width: 100%;
+  z-index: 10;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+}
+
+#dialog_asistencia::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-container {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 5vh;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#dialog-title {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+#dialog-docente {
+  font-weight: bold;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+#dialog-fecha {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--color-gray);
+  font-style: italic;
+}
+
+#dialog-entrada,
+#dialog-salida,
+#dialog-justificacion {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border-left: 4px solid var(--color-secondary);
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+#dialog-justificacion {
+  border-color: var(--color-accent);
+  background-color: #e8f0fb;
+}
+
+.dialog-container button {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+  display: block;
+  margin-left: auto;
+}
+
+.dialog-container button:hover {
+  background-color: var(--color-accent);
+}

@@ -20,6 +20,7 @@ export const generateAsitencia = () => {
         tipoEntrada: asistencia.entrada.tipoEntrada,
         horaEntrada: asistencia.entrada.horaEntrada,
       },
+      justificacion: asistencia.justificacion || "",
     });
     $("#asistencia_conte").appendChild(card);
   });

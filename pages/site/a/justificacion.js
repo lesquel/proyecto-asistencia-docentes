@@ -2,7 +2,10 @@ import { Data } from "../../../js/data.data.js";
 import { siteRoutes } from "../../../js/routes/site.routes.js";
 import { authRoutes } from "../../../js/routes/auth.routes.js";
 import { patternList } from "../../../js/types/pattern-list.types.js";
-import { TipoEntrada, TipoSalida } from "../../../js/types/tipo-asistencia.type.js";
+import {
+  TipoEntrada,
+  TipoSalida,
+} from "../../../js/types/tipo-asistencia.type.js";
 import { TipoJustificacion } from "../../../js/types/tipo-justificacion.type.js";
 import { $, generateInput, useRoutes } from "../../../js/utils/index.js";
 const data = new Data();
@@ -11,11 +14,9 @@ const routes = new useRoutes();
 const select = $("#select-horario");
 const horarios = data.obtenerHorarios();
 
-
 if (!data.getUser()) {
   routes.redirect(authRoutes[0].path);
 }
-
 
 horarios.forEach((horario) => {
   const option = document.createElement("option");
@@ -33,7 +34,6 @@ TipoJustificacion.forEach((justificacion) => {
   selectTipoJustificacion.appendChild(option);
 });
 
-
 const motivo = generateInput(
   {
     className: "input-field",
@@ -48,14 +48,17 @@ const motivo = generateInput(
   { labelText: "Motivo de la justificación" }
 );
 
-
 $("#form-justificacion").addEventListener("submit", (e) => {
   e.preventDefault();
 
   motivo.showError();
+  if (motivo.getValue().trim() === "") {
+    motivo.showError();
+    return;
+  }
   const horario = select.value;
   const tipoJustificacion = selectTipoJustificacion.value;
-  const motivoValue = motivo.getValue(); 
+  const motivoValue = motivo.getValue();
 
   const h = data.obtenerHorarioPorFecha(horario);
   data.removeHorario(h.id);
@@ -72,8 +75,9 @@ $("#form-justificacion").addEventListener("submit", (e) => {
       tipoSalida: TipoSalida.justificacion,
       horaSalida: undefined,
     },
+    justificacion: motivoValue,
   });
   routes.redirect(siteRoutes[0].path);
 
-  console.log({horario, tipoJustificacion, motivoValue});
+  console.log({ horario, tipoJustificacion, motivoValue });
 });

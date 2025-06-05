@@ -1,10 +1,30 @@
 import { Data } from "../../js/data.data.js";
 import { $ } from "../../js/utils/get-element.utils.js";
+import { useDialog } from "./useDialog.js";
 
-export const templateAsistencia = ({ id, lugar, fecha, salida, entrada }) => {
+export const templateAsistencia = ({
+  id,
+  lugar,
+  fecha,
+  salida,
+  entrada,
+  justificacion,
+}) => {
   const template = $(".workout-template")[0];
   console.log(template);
   const clone = template.content.cloneNode(true);
+
+  clone.querySelector(".workout-card").addEventListener("click", () => {
+    useDialog({
+      id,
+      lugar,
+      fecha,
+      salida,
+      entrada,
+      justificacion,
+    });
+    dialog_asistencia.show();
+  });
 
   clone.querySelector(".workout-title").textContent = lugar;
   clone.querySelector(".workout-time").textContent = fecha;
@@ -20,7 +40,8 @@ export const templateAsistencia = ({ id, lugar, fecha, salida, entrada }) => {
   const entradaText = document.createElement("div");
   entradaText.className = "workout-text";
   const textoEntrada = entrada.horaEntrada ? entrada.horaEntrada : "";
-  entradaText.textContent = entrada.tipoEntrada + ", " + textoEntrada; //(entrada.horaEntrada) ? entrada.horaEntrada : "";
+  const textoTipoEntrada = entrada.tipoEntrada ? entrada.tipoEntrada : "";
+  entradaText.textContent = textoTipoEntrada + ", " + textoEntrada; //(entrada.horaEntrada) ? entrada.horaEntrada : "";
 
   entradaDiv.appendChild(entradaDot);
   entradaDiv.appendChild(entradaText);
@@ -35,7 +56,8 @@ export const templateAsistencia = ({ id, lugar, fecha, salida, entrada }) => {
   const salidaText = document.createElement("div");
   salidaText.className = "workout-text";
   const textoSalida = salida.horaSalida ? salida.horaSalida : "";
-  salidaText.textContent = salida.tipoSalida + ", " + textoSalida; //(salida.horaSalida) ? salida.horaSalida : "";
+  const textoTipoSalida = salida.tipoSalida ? salida.tipoSalida : "";
+  salidaText.textContent = textoTipoSalida + ", " + textoSalida; //(salida.horaSalida) ? salida.horaSalida : "";
 
   salidaDiv.appendChild(salidaDot);
   salidaDiv.appendChild(salidaText);

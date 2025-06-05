@@ -1,5 +1,5 @@
 export class Asistencia {
-  constructor({ id, idDocente, idLugar, entrada, salida, fecha }) {
+  constructor({ id, idDocente, idLugar, entrada, salida, fecha, justificacion }) {
     this.id = id;
     this.idDocente = idDocente;
     this.idLugar = idLugar;
@@ -14,5 +14,7 @@ export class Asistencia {
       tipoSalida: salida?.tipoSalida,
       horaSalida: salida?.horaSalida,
     };
+
+    this.justificacion = justificacion;
   }
 }
